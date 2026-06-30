@@ -1,0 +1,12 @@
+[Unit]
+Description=Headless sync of DN42 Bird Config Kit
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/local/bin/sync-bird-kit.sh
+
+[Install]
+WantedBy=multi-user.target
