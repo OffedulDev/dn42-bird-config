@@ -6,7 +6,8 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 User=root
-ExecStart=/usr/local/bin/sync-bird-kit.sh
+ExecStartPre=/usr/bin/chmod +x /etc/bird/kit/auto_pull.sh
+ExecStart=/etc/bird/kit/auto_pull.sh
 
 [Install]
 WantedBy=multi-user.target
